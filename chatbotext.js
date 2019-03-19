@@ -8,11 +8,11 @@
         return {status: 2, msg: 'Ready'};
     };
 
-    ext.get_temp = function(lang, funcName, callback) {
+    ext.get_help = function(lang, funcName, callback) {
         var jsonData = new Object();
         jsonData.Lang = lang;
         jsonData.FuncName = funcName;
-        
+
         $.support.cors = true;
         $.ajax({
             url: 'https://stg.moducoding.com/Chatbot/LanguageReference',
