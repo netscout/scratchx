@@ -41,7 +41,7 @@
     // Block and block menu descriptions
     var descriptor = {
         blocks: [
-            ['R', '%s 함수의 정의 가져오기', 'get_help', 'c', 'printf'],
+            ['R', '%s 언어, %s 함수의 정의 가져오기', 'get_help', 'c', 'printf'],
         ]
     };
 
