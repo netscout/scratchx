@@ -12,13 +12,18 @@
         var jsonData = new Object();
         jsonData.Lang = lang;
         jsonData.FuncName = funcName;
-
+        
+        $.support.cors = true;
         $.ajax({
             url: 'https://stg.moducoding.com/Chatbot/LanguageReference',
-            dataType: 'jsonp',
-            body: JSON.stringify(jsonData),
-            success: function( weather_data ) {
-                callback(res.json());
+            method:"post",
+            crossDomain:true,
+            dataType: 'json',
+            contentType:"application/json",
+            data: JSON.stringify(jsonData),
+            success: function( res ) {
+                //document.write(res.data.definition);
+                callback(res.data.definition);
             }
         });
 
