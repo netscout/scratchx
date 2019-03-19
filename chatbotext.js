@@ -12,20 +12,30 @@
         var jsonData = new Object();
         jsonData.Lang = lang;
         jsonData.FuncName = funcName;
-        fetch('https://stg.moducoding.com/Chatbot/LanguageReference', {
-            method: 'post',
-            headers: {
-                //'Authorization' : `Bearer ${token}`,
-                'Accept': 'application/json, text/plain, */*',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(jsonData)
-        })
-        .then(res => {
-            if(res.ok){
+
+        $.ajax({
+            url: 'https://stg.moducoding.com/Chatbot/LanguageReference',
+            dataType: 'jsonp',
+            body: JSON.stringify(jsonData),
+            success: function( weather_data ) {
                 callback(res.json());
             }
         });
+
+        // fetch('https://stg.moducoding.com/Chatbot/LanguageReference', {
+        //     method: 'post',
+        //     headers: {
+        //         //'Authorization' : `Bearer ${token}`,
+        //         'Accept': 'application/json, text/plain, */*',
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(jsonData)
+        // })
+        // .then(res => {
+        //     if(res.ok){
+        //         callback(res.json());
+        //     }
+        // });
     };
 
     // Block and block menu descriptions
